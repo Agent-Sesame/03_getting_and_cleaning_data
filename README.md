@@ -25,6 +25,10 @@ The course project is described in detail here:
 https://class.coursera.org/getdata-034/human_grading<BR>
 https://class.coursera.org/getdata-034/human_grading/view/courses/975118/assessments/3/submissions<BR>
 
+The course project refers to this source:
+
+http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones
+
 # Course Project Steps
 The course project assignment requires the following steps to be performed. 
 Create one R script called run_analysis.R that does the following:
