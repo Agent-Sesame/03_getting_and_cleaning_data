@@ -148,7 +148,7 @@ the in-scope variable measurements using the mean function.
 
 #Citations
 Hadley Wickham, Tidy Data, pg. 7, chart (b) Molten Data<BR>
-vita.had.co.nz/papers/tidy-data.pdf<BR>
+http://vita.had.co.nz/papers/tidy-data.pdf<BR>
 
 Step 4: Reading lines back into R<BR>
 https://thoughtfulbloke.wordpress.com/2015/09/09/getting-and-cleaning-the-assignment/
