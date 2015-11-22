@@ -320,7 +320,7 @@ earth -> 9.80665 m/seg2).<BR>
 - The gyroscope units are rad/seg.<BR> 
 
 features.txt label | make.names label | Time or Frequency | Body or Gravity | What was Measured | Function Applied | Axis | Unit of measurement
------------------------------------------------- | ---------------------------------------- | -------------------- | -------------------- | ------------------------- | --------------------- | ----- | --------------------------
+--------------------------- | --------------------------- | ----------------- | --------------- | -------------------------------- | ------------------ | ---- | ------------------------
 tBodyAcc-mean()-X | tBodyAcc.mean...X | time | body | acceleration | mean value | x | 9.80665 m/seg2
 tBodyAcc-mean()-Y | tBodyAcc.mean...Y | time | body | acceleration | mean value | y | 9.80665 m/seg2
 tBodyAcc-mean()-Z | tBodyAcc.mean...Z | time | body | acceleration | mean value | z | 9.80665 m/seg2
