@@ -137,7 +137,7 @@ data using pattern based grep commands.
 - Melt the subset data into a narrow long table following the tidy data
 principles as described by Hadley Wickham in his "Tidy Data" essay using the melt
 function.
-- Cleaned up variable names using the colnames function.
+- Clean up variable names using the colnames function.
 - Group data by activity, subject, measurement variable using group_by 
 function.
 - Summarize the grouped data with the summarize function by unique activity, 
