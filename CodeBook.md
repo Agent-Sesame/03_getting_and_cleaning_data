@@ -16,7 +16,7 @@ long (narrow) form as described by Hadley Wickham in his tidy data PDF, page 7,
 table B entitled Molten data. See References for URL to the PDF of his work. 
 The course TAs recommended to students who opted for the long (narrow) tidy 
 data set to emphasize that this method is acceptable per the course 
-rubrik. Reference this recommendation noted in TA's thoughtfulbloke blog.
+rubric. Reference this recommendation noted in TA's thoughtfulbloke blog.
 See References for URL to his blog, section Part 6 : Getting and Cleaning the 
 Assignment, sub-section Bonus Round: Easy Marking.</span> 
 
@@ -41,7 +41,7 @@ other platforms or platforms with comparatively inferior hardware specification.
 
 - Language: R version 3.2.2, 64-bit
 - IDE: Version 0.99.485 - © 2009-2015 RStudio, Inc.
-- Dependancies: Java Version 8 Update 65 (build 1.8.0_65-b17)
+- Dependencies: Java Version 8 Update 65 (build 1.8.0_65-b17)
 
 ###Installed R Packages, Versions, and Builds
 The following R Packages are presumed required to execute the referenced R
@@ -209,7 +209,7 @@ greater detail in this project's README file. Refer to README as needed.
 <b>Step 1:</b> Set R working directory to unzipped directory 
         "...\\UCI HAR Dataset\\...".<BR>
 <b>Step 2:</b> Source R package<BR>
-<b>Step 3:</b> Load known dependancies to your environment<BR>
+<b>Step 3:</b> Load known dependencies to your environment<BR>
 <b>Step 4:</b> Evaluate results in "...\\UCI HAR Dataset\\Write_Data\\".<BR>
 <b>Step 5:</b> Clean up artifacts left in Global Environment.<BR>
 
@@ -259,7 +259,7 @@ WALKING_UPSTAIRS: 1980 | Max.: 30.0 | Cell 2 | Max.: 0.97451
         - Variable.Average<BR>
 
 ###Variable 1: activity.name
-This variable describes 6 defined physical activies measured by humans wearing 
+This variable describes 6 defined physical activities measured by humans wearing 
 motion sensing mobile computing devices. 
 
 - Class of the variable: factor<BR>
@@ -311,13 +311,21 @@ tidy dataset.
 *XYZ is used to denote 3-axial signals in the X, Y and Z directions.*
 
 - Class of the variable: factor<BR>
-- The following table lists all levles of the variable, the deconstruction of
+- The following table lists all levels of the variable, the deconstruction of
 the variable to derive its meaning, and the variable's unit of measurement.<BR>
-- Features are normalized and bounded within [-1,1].<BR>
-- Each feature vector is a row on the 'X' and 'y' files.<BR>
-- The units used for the accelerations (total and body) are 'g's (gravity of 
-earth -> 9.80665 m/seg2).<BR>
-- The gyroscope units are rad/seg.<BR> 
+
+The following notes are a direct extract from the project's online information.
+Units of measurement was determined from the Machine Learning Repository, 
+Smartphone-Based Recognition of Human Activities and Postural Transitions Data 
+Set, Notes section. URL noted in the References section. To see units on the 
+table, scroll to bottom and use the horizontal slider to view far right 
+column.<BR>
+
+*- Features are normalized and bounded within [-1,1].*<BR>
+*- Each feature vector is a row on the 'X' and 'y' files.*<BR>
+*- The units used for the accelerations (total and body) are 'g's (gravity of* 
+*earth -> 9.80665 m/seg2).*<BR>
+*- The gyroscope units are rad/seg.*<BR> 
 
 features.txt label | make.names label | Time or Frequency | Body or Gravity | What was Measured | Function Applied | Axis | Unit of measurement
 --------------------------- | --------------------------- | ----------------- | --------------- | -------------------------------- | ------------------ | ---- | ------------------------
@@ -397,11 +405,7 @@ included in the raw data, such as meanFreq, project course specifications
 included only mean and standard deviation measures. Since the raw data
 documentation had high quality data definition documentation, with mean and
 mean frequency being explicitly different measurements, for the purpose of this 
-project I have excluded meanFreq meansurements.</span>
-
-Units of measurement was determined from the Machine Learning Repository, 
-Smartphone-Based Recognition of Human Activities and Postural Transitions Data 
-Set, URL noted in the References section.
+project I have excluded meanFreq measurements as out of scope.</span>
 
 ###Variable 4: Variable.Average
 Per each feature variable identified in variable 3, a mean is calculated for 
@@ -412,9 +416,6 @@ activity, subject, and variable, this is the average of the measurement.
 - Unique values/levels of the variable: none<BR>
 - Unit of measurement: refer to variable 3 for the unit of measurement this
  number represents.<BR>
-
-##Sources
-Sources you used if any, otherise leave out.
 
 ##References
 - Code book template: https://gist.github.com/JorisSchut/dbc1fc0402f28cad9b41<BR>
