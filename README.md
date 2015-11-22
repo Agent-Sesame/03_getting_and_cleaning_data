@@ -89,19 +89,19 @@ View(GandCData)
 
 <b>Step 5:</b> Alternatively evaluate results in the global environment variable
         'thisseemstoWork'. Copy and paste the following line into the R console
-        to check output.
-
+        to check output.<BR>
+<BR>
 ```
 View(thisseemstoWork)
 ```
-
+<BR>
 <b>Step 6:</b> Copy and paste the following lines into the R console to remove
-        the created variables from your global environment.
-
+        the created variables from your global environment.<BR>
+<BR>
 ```
 rm("thisseemstoWork", "GandCData", "fileUrl1")
 ```
-
+<BR>
 #Assumptions About the Raw Dataset
 The script assumes the following about the raw dataset:
 
