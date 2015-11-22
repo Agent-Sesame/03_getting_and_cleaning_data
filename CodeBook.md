@@ -317,9 +317,7 @@ the variable to derive its meaning, and the variable's unit of measurement.<BR>
 The following notes are a direct extract from the project's online information.
 Units of measurement was determined from the Machine Learning Repository, 
 Smartphone-Based Recognition of Human Activities and Postural Transitions Data 
-Set, Notes section. URL noted in the References section. To see units on the 
-table, scroll to bottom and use the horizontal slider to view far right 
-column.<BR>
+Set, Notes section. URL noted in the References section.<BR>
 
 *- Features are normalized and bounded within [-1,1].*<BR>
 *- Each feature vector is a row on the 'X' and 'y' files.*<BR>
@@ -327,74 +325,74 @@ column.<BR>
 *earth -> 9.80665 m/seg2).*<BR>
 *- The gyroscope units are rad/seg.*<BR> 
 
-features.txt label | make.names label | Time or Frequency | Body or Gravity | What was Measured | Function Applied | Axis | Unit of measurement
---------------------------- | --------------------------- | ----------------- | --------------- | -------------------------------- | ------------------ | ---- | ------------------------
-tBodyAcc-mean()-X | tBodyAcc.mean...X | time | body | acceleration | mean value | x | 9.80665 m/seg2
-tBodyAcc-mean()-Y | tBodyAcc.mean...Y | time | body | acceleration | mean value | y | 9.80665 m/seg2
-tBodyAcc-mean()-Z | tBodyAcc.mean...Z | time | body | acceleration | mean value | z | 9.80665 m/seg2
-tBodyAcc-std()-X | tBodyAcc.std...X | time | body | acceleration | standard deviation | x | 9.80665 m/seg2
-tBodyAcc-std()-Y | tBodyAcc.std...Y | time | body | acceleration | standard deviation | y | 9.80665 m/seg2
-tBodyAcc-std()-Z | tBodyAcc.std...Z | time | body | acceleration | standard deviation | z | 9.80665 m/seg2
-tGravityAcc-mean()-X | tGravityAcc.mean...X | time | gravity | acceleration | mean value | x | 9.80665 m/seg2
-tGravityAcc-mean()-Y | tGravityAcc.mean...Y | time | gravity | acceleration | mean value | y | 9.80665 m/seg2
-tGravityAcc-mean()-Z | tGravityAcc.mean...Z | time | gravity | acceleration | mean value | z | 9.80665 m/seg2
-tGravityAcc-std()-X | tGravityAcc.std...X | time | gravity | acceleration | standard deviation | x | 9.80665 m/seg2
-tGravityAcc-std()-Y | tGravityAcc.std...Y | time | gravity | acceleration | standard deviation | y | 9.80665 m/seg2
-tGravityAcc-std()-Z | tGravityAcc.std...Z | time | gravity | acceleration | standard deviation | z | 9.80665 m/seg2
-tBodyAccJerk-mean()-X | tBodyAccJerk.mean...X | time | body | acceleration jerk | mean value | x | 9.80665 m/seg2
-tBodyAccJerk-mean()-Y | tBodyAccJerk.mean...Y | time | body | acceleration jerk | mean value | y | 9.80665 m/seg2
-tBodyAccJerk-mean()-Z | tBodyAccJerk.mean...Z | time | body | acceleration jerk | mean value | z | 9.80665 m/seg2
-tBodyAccJerk-std()-X | tBodyAccJerk.std...X | time | body | acceleration jerk | standard deviation | x | 9.80665 m/seg2
-tBodyAccJerk-std()-Y | tBodyAccJerk.std...Y | time | body | acceleration jerk | standard deviation | y | 9.80665 m/seg2
-tBodyAccJerk-std()-Z | tBodyAccJerk.std...Z | time | body | acceleration jerk | standard deviation | z | 9.80665 m/seg2
-tBodyGyro-mean()-X | tBodyGyro.mean...X | time | body | gyroscope | mean value | x | rad/seg
-tBodyGyro-mean()-Y | tBodyGyro.mean...Y | time | body | gyroscope | mean value | y | rad/seg
-tBodyGyro-mean()-Z | tBodyGyro.mean...Z | time | body | gyroscope | mean value | z | rad/seg
-tBodyGyro-std()-X | tBodyGyro.std...X | time | body | gyroscope | standard deviation | x | rad/seg
-tBodyGyro-std()-Y | tBodyGyro.std...Y | time | body | gyroscope | standard deviation | y | rad/seg
-tBodyGyro-std()-Z | tBodyGyro.std...Z | time | body | gyroscope | standard deviation | z | rad/seg
-tBodyGyroJerk-mean()-X | tBodyGyroJerk.mean...X | time | body | gyroscope jerk | mean value | x | rad/seg
-tBodyGyroJerk-mean()-Y | tBodyGyroJerk.mean...Y | time | body | gyroscope jerk | mean value | y | rad/seg
-tBodyGyroJerk-mean()-Z | tBodyGyroJerk.mean...Z | time | body | gyroscope jerk | mean value | z | rad/seg
-tBodyGyroJerk-std()-X | tBodyGyroJerk.std...X | time | body | gyroscope jerk | standard deviation | x | rad/seg
-tBodyGyroJerk-std()-Y | tBodyGyroJerk.std...Y | time | body | gyroscope jerk | standard deviation | y | rad/seg
-tBodyGyroJerk-std()-Z | tBodyGyroJerk.std...Z | time | body | gyroscope jerk | standard deviation | z | rad/seg
-tBodyAccMag-mean() | tBodyAccMag.mean.. | time | body | acceleration magnitude | mean value | (no axis) | 9.80665 m/seg2
-tBodyAccMag-std() | tBodyAccMag.std.. | time | body | acceleration magnitude | standard deviation | (no axis) | 9.80665 m/seg2
-tGravityAccMag-mean() | tGravityAccMag.mean.. | time | gravity | acceleration magnitude | mean value | (no axis) | 9.80665 m/seg2
-tGravityAccMag-std() | tGravityAccMag.std.. | time | gravity | acceleration magnitude | standard deviation | (no axis) | 9.80665 m/seg2
-tBodyAccJerkMag-mean() | tBodyAccJerkMag.mean.. | time | body | acceleration jerk magnitude | mean value | (no axis) | 9.80665 m/seg2
-tBodyAccJerkMag-std() | tBodyAccJerkMag.std.. | time | body | acceleration jerk magnitude | standard deviation | (no axis) | 9.80665 m/seg2
-tBodyGyroMag-mean() | tBodyGyroMag.mean.. | time | body | gyroscope magnitude | mean value | (no axis) | rad/seg
-tBodyGyroMag-std() | tBodyGyroMag.std.. | time | body | gyroscope magnitude | standard deviation | (no axis) | rad/seg
-tBodyGyroJerkMag-mean() | tBodyGyroJerkMag.mean.. | time | body | gyroscope jerk magnitude | mean value | (no axis) | rad/seg
-tBodyGyroJerkMag-std() | tBodyGyroJerkMag.std.. | time | body | gyroscope jerk magnitude | standard deviation | (no axis) | rad/seg
-fBodyAcc-mean()-X | fBodyAcc.mean...X | frequency | body | acceleration | mean value | x | 9.80665 m/seg2
-fBodyAcc-mean()-Y | fBodyAcc.mean...Y | frequency | body | acceleration | mean value | y | 9.80665 m/seg2
-fBodyAcc-mean()-Z | fBodyAcc.mean...Z | frequency | body | acceleration | mean value | z | 9.80665 m/seg2
-fBodyAcc-std()-X | fBodyAcc.std...X | frequency | body | acceleration | standard deviation | x | 9.80665 m/seg2
-fBodyAcc-std()-Y | fBodyAcc.std...Y | frequency | body | acceleration | standard deviation | y | 9.80665 m/seg2
-fBodyAcc-std()-Z | fBodyAcc.std...Z | frequency | body | acceleration | standard deviation | z | 9.80665 m/seg2
-fBodyAccJerk-mean()-X | fBodyAccJerk.mean...X | frequency | body | acceleration jerk | mean value | x | 9.80665 m/seg2
-fBodyAccJerk-mean()-Y | fBodyAccJerk.mean...Y | frequency | body | acceleration jerk | mean value | y | 9.80665 m/seg2
-fBodyAccJerk-mean()-Z | fBodyAccJerk.mean...Z | frequency | body | acceleration jerk | mean value | z | 9.80665 m/seg2
-fBodyAccJerk-std()-X | fBodyAccJerk.std...X | frequency | body | acceleration jerk | standard deviation | x | 9.80665 m/seg2
-fBodyAccJerk-std()-Y | fBodyAccJerk.std...Y | frequency | body | acceleration jerk | standard deviation | y | 9.80665 m/seg2
-fBodyAccJerk-std()-Z | fBodyAccJerk.std...Z | frequency | body | acceleration jerk | standard deviation | z | 9.80665 m/seg2
-fBodyGyro-mean()-X | fBodyGyro.mean...X | frequency | body | gyroscope | mean value | x | rad/seg
-fBodyGyro-mean()-Y | fBodyGyro.mean...Y | frequency | body | gyroscope | mean value | y | rad/seg
-fBodyGyro-mean()-Z | fBodyGyro.mean...Z | frequency | body | gyroscope | mean value | z | rad/seg
-fBodyGyro-std()-X | fBodyGyro.std...X | frequency | body | gyroscope | standard deviation | x | rad/seg
-fBodyGyro-std()-Y | fBodyGyro.std...Y | frequency | body | gyroscope | standard deviation | y | rad/seg
-fBodyGyro-std()-Z | fBodyGyro.std...Z | frequency | body | gyroscope | standard deviation | z | rad/seg
-fBodyAccMag-mean() | fBodyAccMag.mean.. | frequency | body | acceleration magnitude | mean value | (no axis) | 9.80665 m/seg2
-fBodyAccMag-std() | fBodyAccMag.std.. | frequency | body | acceleration magnitude | standard deviation | (no axis) | 9.80665 m/seg2
-fBodyBodyAccJerkMag-mean() | fBodyBodyAccJerkMag.mean.. | frequency | body | body acceleration jerk magnitude | mean value | (no axis) | 9.80665 m/seg2
-fBodyBodyAccJerkMag-std() | fBodyBodyAccJerkMag.std.. | frequency | body | body acceleration jerk magnitude | standard deviation | (no axis) | 9.80665 m/seg2
-fBodyBodyGyroMag-mean() | fBodyBodyGyroMag.mean.. | frequency | body | body gyroscope magnitude | mean value | (no axis) | rad/seg
-fBodyBodyGyroMag-std() | fBodyBodyGyroMag.std.. | frequency | body | body gyroscope magnitude | standard deviation | (no axis) | rad/seg
-fBodyBodyGyroJerkMag-mean() | fBodyBodyGyroJerkMag.mean.. | frequency | body | body gyroscope jerk magnitude | mean value | (no axis) | rad/seg
-fBodyBodyGyroJerkMag-std() | fBodyBodyGyroJerkMag.std.. | frequency | body | body gyroscope jerk magnitude | standard deviation | (no axis) | rad/seg
+Unit of measurement | features.txt label | make.names label | Time or Frequency | Body or Gravity | What was Measured | Function Applied | Axis
+---------------------------- | --------------------------- | ---------------------------------------- | -------------------- | -------------------- | ------------------------- | --------------------- | -----
+9.80665 m/seg2 (normalized to [-1, 1]) | tBodyAcc-mean()-X | tBodyAcc.mean...X | time | body | acceleration | mean value | x
+9.80665 m/seg2 (normalized to [-1, 1]) | tBodyAcc-mean()-Y | tBodyAcc.mean...Y | time | body | acceleration | mean value | y
+9.80665 m/seg2 (normalized to [-1, 1]) | tBodyAcc-mean()-Z | tBodyAcc.mean...Z | time | body | acceleration | mean value | z
+9.80665 m/seg2 (normalized to [-1, 1]) | tBodyAcc-std()-X | tBodyAcc.std...X | time | body | acceleration | standard deviation | x
+9.80665 m/seg2 (normalized to [-1, 1]) | tBodyAcc-std()-Y | tBodyAcc.std...Y | time | body | acceleration | standard deviation | y
+9.80665 m/seg2 (normalized to [-1, 1]) | tBodyAcc-std()-Z | tBodyAcc.std...Z | time | body | acceleration | standard deviation | z
+9.80665 m/seg2 (normalized to [-1, 1]) | tGravityAcc-mean()-X | tGravityAcc.mean...X | time | gravity | acceleration | mean value | x
+9.80665 m/seg2 (normalized to [-1, 1]) | tGravityAcc-mean()-Y | tGravityAcc.mean...Y | time | gravity | acceleration | mean value | y
+9.80665 m/seg2 (normalized to [-1, 1]) | tGravityAcc-mean()-Z | tGravityAcc.mean...Z | time | gravity | acceleration | mean value | z
+9.80665 m/seg2 (normalized to [-1, 1]) | tGravityAcc-std()-X | tGravityAcc.std...X | time | gravity | acceleration | standard deviation | x
+9.80665 m/seg2 (normalized to [-1, 1]) | tGravityAcc-std()-Y | tGravityAcc.std...Y | time | gravity | acceleration | standard deviation | y
+9.80665 m/seg2 (normalized to [-1, 1]) | tGravityAcc-std()-Z | tGravityAcc.std...Z | time | gravity | acceleration | standard deviation | z
+9.80665 m/seg2 (normalized to [-1, 1]) | tBodyAccJerk-mean()-X | tBodyAccJerk.mean...X | time | body | acceleration jerk | mean value | x
+9.80665 m/seg2 (normalized to [-1, 1]) | tBodyAccJerk-mean()-Y | tBodyAccJerk.mean...Y | time | body | acceleration jerk | mean value | y
+9.80665 m/seg2 (normalized to [-1, 1]) | tBodyAccJerk-mean()-Z | tBodyAccJerk.mean...Z | time | body | acceleration jerk | mean value | z
+9.80665 m/seg2 (normalized to [-1, 1]) | tBodyAccJerk-std()-X | tBodyAccJerk.std...X | time | body | acceleration jerk | standard deviation | x
+9.80665 m/seg2 (normalized to [-1, 1]) | tBodyAccJerk-std()-Y | tBodyAccJerk.std...Y | time | body | acceleration jerk | standard deviation | y
+9.80665 m/seg2 (normalized to [-1, 1]) | tBodyAccJerk-std()-Z | tBodyAccJerk.std...Z | time | body | acceleration jerk | standard deviation | z
+rad/seg (normalized to [-1, 1]) | tBodyGyro-mean()-X | tBodyGyro.mean...X | time | body | gyroscope | mean value | x
+rad/seg (normalized to [-1, 1]) | tBodyGyro-mean()-Y | tBodyGyro.mean...Y | time | body | gyroscope | mean value | y
+rad/seg (normalized to [-1, 1]) | tBodyGyro-mean()-Z | tBodyGyro.mean...Z | time | body | gyroscope | mean value | z
+rad/seg (normalized to [-1, 1]) | tBodyGyro-std()-X | tBodyGyro.std...X | time | body | gyroscope | standard deviation | x
+rad/seg (normalized to [-1, 1]) | tBodyGyro-std()-Y | tBodyGyro.std...Y | time | body | gyroscope | standard deviation | y
+rad/seg (normalized to [-1, 1]) | tBodyGyro-std()-Z | tBodyGyro.std...Z | time | body | gyroscope | standard deviation | z
+rad/seg (normalized to [-1, 1]) | tBodyGyroJerk-mean()-X | tBodyGyroJerk.mean...X | time | body | gyroscope jerk | mean value | x
+rad/seg (normalized to [-1, 1]) | tBodyGyroJerk-mean()-Y | tBodyGyroJerk.mean...Y | time | body | gyroscope jerk | mean value | y
+rad/seg (normalized to [-1, 1]) | tBodyGyroJerk-mean()-Z | tBodyGyroJerk.mean...Z | time | body | gyroscope jerk | mean value | z
+rad/seg (normalized to [-1, 1]) | tBodyGyroJerk-std()-X | tBodyGyroJerk.std...X | time | body | gyroscope jerk | standard deviation | x
+rad/seg (normalized to [-1, 1]) | tBodyGyroJerk-std()-Y | tBodyGyroJerk.std...Y | time | body | gyroscope jerk | standard deviation | y
+rad/seg (normalized to [-1, 1]) | tBodyGyroJerk-std()-Z | tBodyGyroJerk.std...Z | time | body | gyroscope jerk | standard deviation | z
+9.80665 m/seg2 (normalized to [-1, 1]) | tBodyAccMag-mean() | tBodyAccMag.mean.. | time | body | acceleration magnitude | mean value | (no axis)
+9.80665 m/seg2 (normalized to [-1, 1]) | tBodyAccMag-std() | tBodyAccMag.std.. | time | body | acceleration magnitude | standard deviation | (no axis)
+9.80665 m/seg2 (normalized to [-1, 1]) | tGravityAccMag-mean() | tGravityAccMag.mean.. | time | gravity | acceleration magnitude | mean value | (no axis)
+9.80665 m/seg2 (normalized to [-1, 1]) | tGravityAccMag-std() | tGravityAccMag.std.. | time | gravity | acceleration magnitude | standard deviation | (no axis)
+9.80665 m/seg2 (normalized to [-1, 1]) | tBodyAccJerkMag-mean() | tBodyAccJerkMag.mean.. | time | body | acceleration jerk magnitude | mean value | (no axis)
+9.80665 m/seg2 (normalized to [-1, 1]) | tBodyAccJerkMag-std() | tBodyAccJerkMag.std.. | time | body | acceleration jerk magnitude | standard deviation | (no axis)
+rad/seg (normalized to [-1, 1]) | tBodyGyroMag-mean() | tBodyGyroMag.mean.. | time | body | gyroscope magnitude | mean value | (no axis)
+rad/seg (normalized to [-1, 1]) | tBodyGyroMag-std() | tBodyGyroMag.std.. | time | body | gyroscope magnitude | standard deviation | (no axis)
+rad/seg (normalized to [-1, 1]) | tBodyGyroJerkMag-mean() | tBodyGyroJerkMag.mean.. | time | body | gyroscope jerk magnitude | mean value | (no axis)
+rad/seg (normalized to [-1, 1]) | tBodyGyroJerkMag-std() | tBodyGyroJerkMag.std.. | time | body | gyroscope jerk magnitude | standard deviation | (no axis)
+9.80665 m/seg2 (normalized to [-1, 1]) | fBodyAcc-mean()-X | fBodyAcc.mean...X | frequency | body | acceleration | mean value | x
+9.80665 m/seg2 (normalized to [-1, 1]) | fBodyAcc-mean()-Y | fBodyAcc.mean...Y | frequency | body | acceleration | mean value | y
+9.80665 m/seg2 (normalized to [-1, 1]) | fBodyAcc-mean()-Z | fBodyAcc.mean...Z | frequency | body | acceleration | mean value | z
+9.80665 m/seg2 (normalized to [-1, 1]) | fBodyAcc-std()-X | fBodyAcc.std...X | frequency | body | acceleration | standard deviation | x
+9.80665 m/seg2 (normalized to [-1, 1]) | fBodyAcc-std()-Y | fBodyAcc.std...Y | frequency | body | acceleration | standard deviation | y
+9.80665 m/seg2 (normalized to [-1, 1]) | fBodyAcc-std()-Z | fBodyAcc.std...Z | frequency | body | acceleration | standard deviation | z
+9.80665 m/seg2 (normalized to [-1, 1]) | fBodyAccJerk-mean()-X | fBodyAccJerk.mean...X | frequency | body | acceleration jerk | mean value | x
+9.80665 m/seg2 (normalized to [-1, 1]) | fBodyAccJerk-mean()-Y | fBodyAccJerk.mean...Y | frequency | body | acceleration jerk | mean value | y
+9.80665 m/seg2 (normalized to [-1, 1]) | fBodyAccJerk-mean()-Z | fBodyAccJerk.mean...Z | frequency | body | acceleration jerk | mean value | z
+9.80665 m/seg2 (normalized to [-1, 1]) | fBodyAccJerk-std()-X | fBodyAccJerk.std...X | frequency | body | acceleration jerk | standard deviation | x
+9.80665 m/seg2 (normalized to [-1, 1]) | fBodyAccJerk-std()-Y | fBodyAccJerk.std...Y | frequency | body | acceleration jerk | standard deviation | y
+9.80665 m/seg2 (normalized to [-1, 1]) | fBodyAccJerk-std()-Z | fBodyAccJerk.std...Z | frequency | body | acceleration jerk | standard deviation | z
+rad/seg (normalized to [-1, 1]) | fBodyGyro-mean()-X | fBodyGyro.mean...X | frequency | body | gyroscope | mean value | x
+rad/seg (normalized to [-1, 1]) | fBodyGyro-mean()-Y | fBodyGyro.mean...Y | frequency | body | gyroscope | mean value | y
+rad/seg (normalized to [-1, 1]) | fBodyGyro-mean()-Z | fBodyGyro.mean...Z | frequency | body | gyroscope | mean value | z
+rad/seg (normalized to [-1, 1]) | fBodyGyro-std()-X | fBodyGyro.std...X | frequency | body | gyroscope | standard deviation | x
+rad/seg (normalized to [-1, 1]) | fBodyGyro-std()-Y | fBodyGyro.std...Y | frequency | body | gyroscope | standard deviation | y
+rad/seg (normalized to [-1, 1]) | fBodyGyro-std()-Z | fBodyGyro.std...Z | frequency | body | gyroscope | standard deviation | z
+9.80665 m/seg2 (normalized to [-1, 1]) | fBodyAccMag-mean() | fBodyAccMag.mean.. | frequency | body | acceleration magnitude | mean value | (no axis)
+9.80665 m/seg2 (normalized to [-1, 1]) | fBodyAccMag-std() | fBodyAccMag.std.. | frequency | body | acceleration magnitude | standard deviation | (no axis)
+9.80665 m/seg2 (normalized to [-1, 1]) | fBodyBodyAccJerkMag-mean() | fBodyBodyAccJerkMag.mean.. | frequency | body | body acceleration jerk magnitude | mean value | (no axis)
+9.80665 m/seg2 (normalized to [-1, 1]) | fBodyBodyAccJerkMag-std() | fBodyBodyAccJerkMag.std.. | frequency | body | body acceleration jerk magnitude | standard deviation | (no axis)
+rad/seg (normalized to [-1, 1]) | fBodyBodyGyroMag-mean() | fBodyBodyGyroMag.mean.. | frequency | body | body gyroscope magnitude | mean value | (no axis)
+rad/seg (normalized to [-1, 1]) | fBodyBodyGyroMag-std() | fBodyBodyGyroMag.std.. | frequency | body | body gyroscope magnitude | standard deviation | (no axis)
+rad/seg (normalized to [-1, 1]) | fBodyBodyGyroJerkMag-mean() | fBodyBodyGyroJerkMag.mean.. | frequency | body | body gyroscope jerk magnitude | mean value | (no axis)
+rad/seg (normalized to [-1, 1]) | fBodyBodyGyroJerkMag-std() | fBodyBodyGyroJerkMag.std.. | frequency | body | body gyroscope jerk magnitude | standard deviation | (no axis)
 
 ####Notes on variable 3: feature.variable
 <span style="color:red">

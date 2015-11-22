@@ -99,7 +99,7 @@ View(thisseemstoWork)
         the created variables from your global environment.<BR>
 <BR>
 ```
-rm("thisseemstoWork", "GandCData", "fileUrl1")
+rm("thisseemstoWork", "GandCData", "fileUrl1", "run_analysis")
 ```
 <BR>
 #Assumptions About the Raw Dataset
