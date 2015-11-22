@@ -45,7 +45,7 @@ GitHub.
 Follow these steps to evaluate my script:
 
 <b>Step 0:</b> Download course project data and unzip. After unzipping do not 
-        modifiy, move, rename, or delete any element of the unzipped directory 
+        modify, move, rename, or delete any element of the unzipped directory 
         structure. Do not modify, move, rename, or delete any unzipped files. If
         you have not already downloaded the course project zip file, copy and 
         paste the following lines into the R console:
@@ -64,8 +64,8 @@ unzip("projectdata.zip")
 <b>Step 2:</b> Source R package by running "source('...\\run_analysis.r')"
 
 <b>Step 3:</b> Copy and paste the following lines into the R console to add 
-        known dependancies to your environment. You will need to download these
-        packages to your environnment if you haven't already done so, prior to 
+        known dependencies to your environment. You will need to download these
+        packages to your environment if you haven't already done so, prior to 
         running these commands.
 
 ```        
@@ -91,17 +91,21 @@ View(GandCData)
         'thisseemstoWork'. Copy and paste the following line into the R console
         to check output.
 
-```View(thisseemstoWork)```
+```
+View(thisseemstoWork)
+```
 
 <b>Step 6:</b> Copy and paste the following lines into the R console to remove
         the created variables from your global environment.
 
-```rm("thisseemstoWork", "GandCData", "fileUrl1")```
+```
+rm("thisseemstoWork", "GandCData", "fileUrl1")
+```
 
 #Assumptions About the Raw Dataset
 The script assumes the following about the raw dataset:
 
-- The data stored at the referenced URL is unchange from time of writing script.
+- The data stored at the referenced URL is unchanged from time of writing script.
 - The directory structure as included in the zip file is unchanged and includes:<BR>
         - UCI HAR Dataset/test/<BR>
         - UCI HAR Dataset/train/<BR>
@@ -116,7 +120,7 @@ The script assumes the following about the raw dataset:
         - y_train.txt<BR>
 
 #High-level Synopsis of the Processing Steps
-Assuming that the above steps are followed and that all script dependancies are
+Assuming that the above steps are followed and that all script dependencies are
 loaded into the R environment prior to running script, the script will:
 
 - Load the files listed under the Assumptions About the Raw Dataset section
@@ -131,7 +135,7 @@ function.
 - Dynamically extract mean and standard deviation measurements from combined
 data using pattern based grep commands.
 - Melt the subset data into a narrow long table following the tidy data
-princples as described by Hadley Wickahm in his "Tidy Data" essay using the melt
+principles as described by Hadley Wickham in his "Tidy Data" essay using the melt
 function.
 - Cleaned up variable names using the colnames function.
 - Group data by activity, subject, measurement variable using group_by 
