@@ -1,7 +1,7 @@
 ---
 title: "README"
 author: "Audrey Julian"
-date: "2015/Nov/20"
+date: "2018/Jun/19"
 output:
   html_document:
     keep_md: yes
@@ -10,17 +10,14 @@ output:
 ---
 
 #Overview
-To evaluate my work for the Getting and Cleaning Data course project, follow
-these steps. Note "..." indicates the pathway in your environment to a directory
-or object. If the working directory set correctly in step 1, this script reads
-specific files from the working directory and reassembles into a tidy data set,
-available for review as noted in steps 4 & 5. Note, this script creates a 
-'Write_Data' directory under the working directory. This script writes data only
-to this created directory. If you need to run this script a second time, please
-manually delete 'Write_Data' directory prior to running the script a second
-time.
+This is a rewrite of old code submitted to Coursera course John Hopkins Data
+Science, Getting and Cleaning Data class. Store this script under a
+preferred working directory, and extract the script data to a sub-directory 
+'data' under the working directory. Create another sub-directory 'output' to
+the same working directory. If reruning the script, delete contents in the 
+'output' before running a second time. 
 
-The course project is described in detail here:
+The original course project is described in detail here:
 
 https://class.coursera.org/getdata-034/human_grading<BR>
 https://class.coursera.org/getdata-034/human_grading/view/courses/975118/assessments/3/submissions<BR>
@@ -33,13 +30,12 @@ http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartpho
 The course project assignment requires the following steps to be performed. 
 Create one R script called run_analysis.R that does the following:
 
-- Merges the training and the test sets to create one data set.
-- Extracts only the measurements on the mean and standard deviation for each 
-measurement. 
-- Uses descriptive activity names to name the activities in the data set
-- Appropriately labels the data set with descriptive variable names. 
-- From the data set in step 4, creates a second, independent tidy data set with
-the average of each variable for each activity and each subject.
+* Merges the training and the test sets to create one data set.
+* Extracts only mean and standard deviation measurements from the data set.
+* Uses descriptive activity names to name the activities in the data set.
+* Appropriately labels the data set with descriptive variable names. 
+* Then create a second, independent tidy data set with the average of each 
+variable for each activity and each subject.
 
 In addition to this R script, the assignment requires a CodeBook and ReadMe 
 file. This document serves as the ReadMe file. The CodeBook may be found in
@@ -48,11 +44,12 @@ GitHub.
 #Outline of the processing steps
 Follow these steps to evaluate my script:
 
-<b>Step 0:</b> Download course project data and unzip. After unzipping do not 
-        modify, move, rename, or delete any element of the unzipped directory 
-        structure. Do not modify, move, rename, or delete any unzipped files. If
-        you have not already downloaded the course project zip file, copy and 
-        paste the following lines into the R console:
+<b>Step 0:</b> Download course project data and unzip. Store data under working
+        directory sub-directory 'data'. Do not modify, move, rename, or delete 
+        any element of the unzipped directory structure and file names. If
+        you have not already downloaded the course project zip file, from inside
+        the working directory, copy and paste the following lines into the R 
+        console:
         
 ```
 fileUrl1 <- "https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip"
@@ -60,51 +57,32 @@ download.file(fileUrl1, "projectdata.zip")
 unzip("projectdata.zip")
 ```
 
-<b>Step 1:</b> Set R working directory to unzipped directory 
-        "...\\UCI HAR Dataset\\...". Please determine the pathway to this 
-        unzipped directory and pass the required command to R console using the
-        setwd() command.
+<b>Step 1:</b> Under working directory, create sub-directory 'data', then move 
+        unzipped files to the 'data' sub-directory. 
 
-<b>Step 2:</b> Source R package by running "source('...\\run_analysis.r')"
+<b>Step 2:</b> Source script by copying and pasting this code to console.
 
-<b>Step 3:</b> Copy and paste the following lines into the R console to add 
-        known dependencies to your environment. You will need to download these
-        packages to your environment if you haven't already done so, prior to 
-        running these commands.
+```
+source('./run_analysis.R')
+```
+
+<b>Step 3:</b> Add script dependancies by copying and pasting code to console.
 
 ```        
-library(dplyr)
-library(reshape)
-library(tidyr)
+install.packages("reshape")
+install.packages("dplyr")
 run_analysis()
 ```
 
-
-
-<b>Step 4:</b> Evaluate results in "...\\UCI HAR Dataset\\Write_Data\\". Two 
-        formats available, 'thisseemstowork.txt' or 'thisseemstowork.csv', 
-        contents of both files the same. To view the file output in R, copy and 
-        paste the following line into the R console:
+<b>Step 4:</b> Evaluate results in working direcotry "./output" sub-directories,
+        "tidysummarizedata.csv" and "tidysummarizedata.txt". To view the file 
+        output in R, copy and paste the following line into the R console:
 
 ```
-GandCData <- read.table("./Write_Data/thisseemstowork.txt", header = TRUE)
-View(GandCData)
+tidydf <- read.table("./tidysummarizedata.txt", header = TRUE)
+View(tidydf)
 ```
 
-<b>Step 5:</b> Alternatively evaluate results in the global environment variable
-        'thisseemstoWork'. Copy and paste the following line into the R console
-        to check output.<BR>
-<BR>
-```
-View(thisseemstoWork)
-```
-<BR>
-<b>Step 6:</b> Copy and paste the following lines into the R console to remove
-        the created variables from your global environment.<BR>
-<BR>
-```
-rm("thisseemstoWork", "GandCData", "fileUrl1", "run_analysis")
-```
 <BR>
 #Assumptions About the Raw Dataset
 The script assumes the following about the raw dataset:
@@ -127,28 +105,17 @@ The script assumes the following about the raw dataset:
 Assuming that the above steps are followed and that all script dependencies are
 loaded into the R environment prior to running script, the script will:
 
-- Load the files listed under the Assumptions About the Raw Dataset section
-using the read.table function.
-- Assign measurement variable names based on features.txt using the make.names
-function.
-- Combine subject, activity, and measurement data by test and train using the 
-cbind function.
-- Combine test and train data using the rbind function.
-- Apply descriptive activity names to the combined data using the merge 
-function.
-- Dynamically extract mean and standard deviation measurements from combined
-data using pattern based grep commands.
-- Melt the subset data into a narrow long table following the tidy data
-principles as described by Hadley Wickham in his "Tidy Data" essay using the melt
-function.
-- Clean up variable names using the colnames function.
-- Group data by activity, subject, measurement variable using group_by 
-function.
-- Summarize the grouped data with the summarize function by unique activity, 
-subject, measurement variable using n_distinct, then calculated the average on 
-the in-scope variable measurements using the mean function.
-- Finally the script writes the resulting data to 
-"...\\UCI HAR Dataset\\Write_data..."
+* Load the files listed under the Assumptions About the Raw Dataset section.
+* Assign and prettify measurement variable names based on features.txt.
+* Combine subject, activity, and measurement data from test and train data.
+* Combine test and train data.
+* Apply descriptive activity names to the combined data.
+* Extract only mean and standard deviation measurements from combined data.
+* Melt data into a narrow long table following the tidy data principles as 
+described by Hadley Wickham in his "Tidy Data" essay.
+* Group data by measurement variable, activity, and subject.
+* Summarize the average of the grouped data.
+* Finally the script writes the resulting data to "./output"
 
 #Citations
 Hadley Wickham, Tidy Data, pg. 7, chart (b) Molten Data<BR>

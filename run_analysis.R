@@ -1,131 +1,132 @@
 run_analysis <- function() {
 
-        ## The following lines of code import data from UCI Har Dataset
-        ## identified necessary for getting and cleaning the wearable computing
-        ## data.
-        
-        activityLabels <- read.table("activity_labels.txt", sep = " ", 
-                header = FALSE, col.names = c("field.activityLabelsid", 
-                "field.activityLabel"))
+  # load required packages in namespace
 
-        featuresLabels <- read.table("features.txt", sep = " " , 
-                header = FALSE, col.names = c("field.featuresLabelsid", 
-                "field.featuresLabel"))
+  library(reshape)
+  library(dplyr)
 
-        ## Create unique measurement variable names based on featuresLables
-        ## variable content.
-        
-        variableLabel <- make.names(as.vector(featuresLabels[, 2]), 
-                unique = TRUE)
+  # Import UCI Har Dataset static data under directory 'data'
 
-        ## Continue importing data from UCI Har Dataset identified necessary for
-        ## getting and cleaning the wearable computing data.
-        
-        testSubject <- read.table("./test/subject_test.txt", sep = " " ,
-                header = FALSE, col.names = "field.personID")
+  setwd("./data")
 
-        testActivities <- read.table("./test/y_test.txt", sep = " " , 
-                header = FALSE, col.names = "field.activityLabelsid")
+  activity_labels <- read.table("activity_labels.txt",
+                               sep = " ",
+                               header = FALSE,
+                               col.names = c("activity_id",
+                                             "activity_label"))
 
-        testMeasurements <- read.table("./test/X_test.txt", header = FALSE, 
-                col.names = variableLabel)
+  features_labels <- read.table("features.txt",
+                                sep = " ",
+                                header = FALSE,
+                                col.names = c("features_id",
+                                             "features_label"))
 
-        trainSubject <- read.table("./train/subject_train.txt", sep = " " , 
-                header = FALSE, col.names = "field.personID")
+  # modify features lables for lintable, descriptive variable names
 
-        trainActivities <- read.table("./train/y_train.txt", sep = " " ,
-                header = FALSE, col.names = "field.activityLabelsid")
+  descriptive_labels <- as.vector(features_labels$features_label)
+  descriptive_labels <- gsub("()-", "_", descriptive_labels, fixed = TRUE)
+  descriptive_labels <- gsub("()", "_", descriptive_labels, fixed = TRUE)
+  descriptive_labels <- gsub("-", "_", descriptive_labels, fixed = TRUE)
+  descriptive_labels <- tolower(descriptive_labels)
+  descriptive_labels <- as.data.frame(descriptive_labels)
 
-        trainMeasurements <- read.table("./train/X_train.txt", header = FALSE, 
-                col.names = variableLabel)
+  features_labels <- bind_cols(features_labels, descriptive_labels)
 
-        ## Stitch together test subject, activity and measurement data using 
-        ## cbind. Row dimensions for these files equal.
-        
-        testData <- cbind(testSubject, testActivities, testMeasurements)
+  # Create unique measurement variables from features_lables variable content
 
-        ## Stitch together training subject, activity and measurement data using 
-        ## cbind. Row dimensions for these files equal.
-        
-        trainData <- cbind(trainSubject, trainActivities, trainMeasurements)
+  variable_label <- make.names(as.vector(features_labels[, 3]), unique = TRUE)
 
-        ## Add source indicator to testData and trainData prior to rbind-ing.
-        
-        trainType <- as.data.frame(c(rep("test", dim(testSubject)[1]), 
-                rep("train", dim(trainSubject)[1])))
+  # Import data from UCI Har Dataset wearable computing data
 
-        ## Name source name 'data.type'
-        
-        colnames(trainType) <- "data.type"
+  test_subject <- read.table("./test/subject_test.txt",
+                            sep = " ",
+                            header = FALSE,
+                            col.names = "subject_id")
 
-        ## Stitch together rbind-ed testData & trainData. Column dimensions the
-        ## same. cbind data source indicator to this data. Row diminensions the
-        ## same.
-        
-        allData <- cbind(trainType, rbind(testData, trainData))
+  test_activities <- read.table("./test/y_test.txt",
+                                sep = " ",
+                                header = FALSE,
+                                col.names = "activity_id")
 
-        ## Merge allactivityData with the descriptive label names for the
-        ## activity ID.
-        
-        allactivityData <- merge(allData, activityLabels, 
-                by = "field.activityLabelsid")
+  test_measurements <- read.table("./test/X_test.txt",
+                                  header = FALSE,
+                                  col.names = variable_label)
 
-        ## Identify column numbers that need to be extracted from the larger
-        ## data set using grep. Benefits from this method allows for dynamic
-        ## extraction of in-scope data without respect to column position in the
-        ## larger data set.
-        
-        meanstdVariable <- c(grep("data.type", names(allactivityData),
-                fixed = TRUE),
-                grep("field.personID", names(allactivityData), fixed = TRUE),
-                grep("field.activityLabel", names(allactivityData), fixed = TRUE),
-                grep("mean\\.", names(allactivityData)),
-                grep("std..", names(allactivityData)))
- 
-        ## Subset allactivityData using the vector created by meanstdVariable.
-        
-        meanstdData <- allactivityData[meanstdVariable]
+  train_subject <- read.table("./train/subject_train.txt",
+                             sep = " ",
+                             header = FALSE,
+                             col.names = "subject_id")
 
-        ## next step requires library(reshape)
+  train_activities <- read.table("./train/y_train.txt",
+                                 sep = " ",
+                                 header = FALSE,
+                                 col.names = "activity_id")
 
-        meltmeanstdData <- melt(meanstdData, id=c("data.type","field.personID",
-                "field.activityLabelsid", "field.activityLabel"))
+  train_measurements <- read.table("./train/X_train.txt",
+                                  header = FALSE,
+                                  col.names = variable_label)
 
-        ## Set final data variable names.
-        
-        finalvariableNames <- c("data.type", "subject.id", "activity.id", 
-                "activity.name", "feature.variable", "feature.measurement")
-        
-        ## Update meltmeanstdData variable names to finalvariableNames
-        
-        colnames(meltmeanstdData) <- finalvariableNames
+  # Combine test subject, activity and measurement data
 
-        ## Create directory into which the remainder of this code will write 
-        ## files
-              
-        dir.create("Write_Data")
+  test_data <- cbind(test_subject, test_activities, test_measurements)
 
-        ## Group by Activity, Subject
-        
-        groupedmeltdata <- group_by(meltmeanstdData, activity.name, 
-                subject.id, feature.variable)
-        
-        ## Then calculate the average of each variable
-        
-        doesthiswork <- summarize(groupedmeltdata,
-                                  Activity = n_distinct(activity.name),
-                                  Subject = n_distinct(subject.id),
-                                  Variable = n_distinct(feature.variable),
-                                  Variable.Average = mean(feature.measurement))
+  # Comibine training subject, activity and measurement data
 
-        ## Write the output to directory. 
-                
-        thisseemstoWork <<- doesthiswork[, c(1, 2, 3, 7)]
-        
-        write.table(doesthiswork[, c(1, 2, 3, 7)], 
-                  file = "./Write_Data/thisseemstowork.csv",
-                  row.names = FALSE)
-        write.table(doesthiswork[, c(1, 2, 3, 7)],
-                  file = "./Write_Data/thisseemstowork.txt",
-                  row.names = FALSE)
+  train_data <- cbind(train_subject, train_activities, train_measurements)
+
+  # Add source indicator to test_data and train_data prior to rbind-ing.
+
+  train_type <- as.data.frame(c(rep("test", dim(test_subject)[1]),
+                                rep("train", dim(train_subject)[1])))
+
+  # Name source name 'data.type'
+
+  colnames(train_type) <- "data_type"
+
+  # Combine test_data & train_data with rbind with source indicator by cbind
+
+  dat <- cbind(train_type, rbind(test_data, train_data))
+
+  # Merge all_activity_data and descriptive label names for the activity ID
+
+  dat <- merge(dat, activity_labels, by = "activity_id")
+
+  # Use grep to pattern match, list the column numbers for mean and standard
+  # deviation data to extract only those measurements from the larger data set.
+  # This method allows for dynamic extraction of in-scope data without
+  # respect to column position in the larger data set.
+
+  mean_std_variables <- c(grep("data_type", names(dat), fixed = TRUE),
+                          grep("subject_id", names(dat), fixed = TRUE),
+                          grep("activity_label", names(dat), fixed = TRUE),
+                          grep("_mean_", names(dat)),
+                          grep("_std_", names(dat)))
+
+  # subset all_activity_data using vector mean_std_variables.
+
+  dat <- dat[mean_std_variables]
+
+  # reshape data to be tall and skinny instead of short and fat
+
+  dat <- melt.data.frame(dat,
+                         id = c("data_type", "subject_id", "activity_label"))
+
+  # group by variable, activity, subject id
+
+  tidydf <- group_by(dat, variable, activity_label, subject_id)
+
+  # calculate average of each variable for each activity and each subject
+
+  tidydf <- tidydf %>% summarise(mean = mean(value))
+
+  # change working diretory to write the output file
+
+  setwd("..")
+  setwd("./output")
+  write.table(tidydf, file = "./tidysummarizedata.csv", row.names = FALSE)
+  write.table(tidydf, file = "./tidysummarizedata.txt", row.names = FALSE)
+  
+  # return working directory to one level up
+  
+  setwd("..")
 }
